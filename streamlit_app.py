@@ -1,2 +1,2 @@
 import streamlit
-stramlit.title('My new code page')
+streamlit.title('My new code page')
