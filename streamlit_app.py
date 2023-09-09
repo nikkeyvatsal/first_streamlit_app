@@ -21,6 +21,10 @@ streamlit.text(fruityvice_response);
 
 streamlit.header("Fruityvice Fruit Advice!")
 
+# write your own comment -data is normalized
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# write your own comment - normalizied as fruit vice
+streamlit.dataframe(fruityvice_normalized)
 
 
 
