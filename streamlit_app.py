@@ -3,8 +3,7 @@ import streamlit
 import pandas
 import requests
 import snowflake.connector
-import urllib
-from urllib.error import URLError
+from URLlib.error import URLError
 
 streamlit.title('My new code page')
 
