@@ -2,7 +2,7 @@
 import streamlit
 import pandas
 import requests
-import snowflake.connectors
+import snowflake.connector
 from urllib.error import URLerror
 
 streamlit.title('My new code page')
