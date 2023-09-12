@@ -32,8 +32,8 @@ fruit_choice = streamlit.text_input('What fruit would you like information about
 streamlit.write('The user entered ', fruit_choice)
 
 
+autopep8 -i get-pip.py
 
- get-pip.py
 
 import snowflake.connector
 
