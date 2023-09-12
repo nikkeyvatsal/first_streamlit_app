@@ -32,10 +32,6 @@ fruit_choice = streamlit.text_input('What fruit would you like information about
 streamlit.write('The user entered ', fruit_choice)
 
 
-https://github.com/damnever/pigar.git
-
-
-import snowflake.connector
 
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
