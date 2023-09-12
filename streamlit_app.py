@@ -42,14 +42,7 @@ streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_row)
 
 
-
-
-add_my_fruit=int(streamlit.text_input("What fruit do you like to add:"))
-list1=[]
-for i in range(n):
-element=input("enter the fruit":)
-list1.append(fruit_load_list)
-print("list elements are:",list1)
+my_cur.execute("insert into fruit_load_list values ('From streamlit')")
 
 
 
