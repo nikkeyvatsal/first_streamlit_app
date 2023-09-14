@@ -65,7 +65,7 @@ def load_fruit_list():
 # Create a Streamlit app
 st.title("Snowflake Fruit List")
 st.sidebar.button("Load Fruit List", on_click=load_fruit_list)
-result_text = tk.Label(root, text="")
+
 result_text.pack()
 
 # Start the GUI main loop
