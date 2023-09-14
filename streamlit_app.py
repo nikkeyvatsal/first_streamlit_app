@@ -15,7 +15,7 @@ streamlit.text('Kale, Spinach & Rocket Smoothie')
 streamlit.text('Hard-Boiled Free-Range Egg')
 
 
-#import pandas
+import pandas
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -23,7 +23,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 
 
 
-#import requests
+import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruityvice_response);
 
@@ -103,13 +103,13 @@ def load_fruits():
         cursor = conn.cursor()
 
         # Execute a SQL query
-        cursor.execute("SELECT fruit_name FROM fruit_load_list")
+        cursor.execute("SELECT fruit_name FROM fruits")
 
         # Fetch the result
         result = cursor.fetchall()
 
         # Display the result
-        result_label.config(text=f"fruit_load_list: {', '.join([row[0] for row in result])}")
+        result_label.config(text=f"Fruit List: {', '.join([row[0] for row in result])}")
 
     except snowflake.connector.errors.ProgrammingError as e:
         result_label.config(text=f"Snowflake Error: {e}")
@@ -134,5 +134,3 @@ result_label.pack()
 
 # Start the GUI main loop
 root.mainloop()
-
-
