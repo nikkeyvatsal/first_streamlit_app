@@ -88,12 +88,35 @@ if st.button("Get Information"):
         st.error("Please select a fruit to get information.")
 
 
-def get_fruit_load_list():
-  with my_cnx.cursor() as my_cur:
-  my_cur.execute('select * from fruit_load_list')
-  return my_cur.fetchall()
+def load_fruit_list():
+    try:
+        # Connect to Snowflake
+        my_cnx = snowflake.connector.connect(**snowflake_params)
 
-if streamlit.button('Get Fruitload list'):
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_data_rows = =get_fruit_load_list()
-streamlit.dataframe(my_data_rows)
+        # Create a cursor
+        my_cur = my_cnx.cursor()
+
+        # Execute SQL query
+        my_cur.execute('select * from fruit_load_list')
+
+        # Fetch and display results
+        result = my_cur.fetchall()
+        st.write("Fruit Load List:")
+        for row in result:
+            st.write(row)
+
+    except snowflake.connector.errors.ProgrammingError as e:
+        st.error(f"Snowflake Error: {e}")
+    except Exception as e:
+        st.error(f"An unexpected error occurred: {e}")
+    finally:
+        # Close cursor and connection
+        my_cur.close()
+        my_cnx.close()
+
+# Create a Streamlit app
+st.title("Fruit Load List App")
+
+# Create a button to load the fruit list
+if st.button("Load Fruit Load List"):
+    load_fruit_list()
