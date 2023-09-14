@@ -33,40 +33,16 @@ if st.button("Get Information"):
     else:
         st.error("Please select a fruit to get information.")
 
-snowflake_params = {
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
+my_cur.execute("select * from fruit_load_list")
+return my_cur.fetchall()
 my_data_row = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_row)
-}
 
-# Define a function to load and display the fruit list
-def fruit_load_list():
-    try:
-        # Connect to Snowflake
-        conn = snowflake.connector.connect(**snowflake_params)
-
-        # Create a cursor
-        cursor = conn.cursor()
-
-        # Execute a SQL query to fetch the fruit list
-        cursor.execute("SELECT fruit_name FROM fruit_load_list")
-
-        # Fetch the result
-        fruit_list = cursor.fetchall()
-
-        # Display the result
-        st.write("Fruit List:")
-        for row in fruit_list:
-            st.write(row[0])
-
-   
-# Create a Streamlit app
-st.title("Fruit List App")
-
-# Create a button to load the fruit list
-if st.button("Load Fruit List"):
-    fruit_load_list()
-
+if streamlit.button('Get Fruitload list'):
+my_cnx = snowflake.connector.connect(**streamlit.secret["snowflake"])
+my_data_rows = =get_fruit_load_list()
+streamlit.dataframe(my_data_rows)
