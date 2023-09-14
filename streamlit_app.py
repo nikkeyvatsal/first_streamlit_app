@@ -53,7 +53,7 @@ streamlit.dataframe(my_data_row)
 
 my_cur.execute("insert into fruit_load_list values ('From streamlit')")
 
-
+import fruit_choice;
 streamlit.header('Fruityvice Fruit Advice!')
 
 try:
