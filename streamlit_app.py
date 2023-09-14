@@ -3,6 +3,7 @@ import streamlit
 import pandas
 import requests
 import snowflake.connector
+import urllib.request
 from URLlib.error import URLError
 
 
@@ -54,8 +55,8 @@ streamlit.dataframe(my_data_row)
 
 my_cur.execute("insert into fruit_load_list values ('From streamlit')")
 
-import fruit_choice
-import error
+
+
 streamlit.header('Fruityvice Fruit Advice!')
 
 try:
