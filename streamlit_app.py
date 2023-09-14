@@ -58,21 +58,9 @@ my_cur.execute("insert into fruit_load_list values ('From streamlit')")
 
 
 
-streamlit.header('Fruityvice Fruit Advice!')
-try:
- = .t("')
-if 
-(streamlit.error_"Please select a fruit to get information")
-else:
-fruitvice_response= request.get("https://fruityvice.com/api/fruit/" +fruit_choice)
-fruityvice_normalized = pandas.json_normalize(fruitvice_response.json())
-streamlit.dataframe(fruityvice_normalized)
-
-except URLError as e;
-streamlit.error()
 
 import requests
-
+streamlit.header('Fruityvice Fruit Advice!')
 try:
     # Code that might raise an exception
     fruit_choice = streamlit.text_input("what fruit would you like information about?")
