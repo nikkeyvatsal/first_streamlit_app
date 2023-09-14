@@ -34,6 +34,7 @@ if st.button("Get Information"):
         st.error("Please select a fruit to get information.")
 
 
+# Define a function to load and display the fruit list
 def load_fruit_list():
     try:
         # Connect to Snowflake
@@ -63,12 +64,9 @@ def load_fruit_list():
         conn.close()
 
 # Create a Streamlit app
-st.title("Snowflake Fruit List")
-st.sidebar.button("Load Fruit List", on_click=load_fruit_list)
+st.title("Fruit List App")
 
-result_text.pack()
-
-# Start the GUI main loop
-root.mainloop()
-
+# Create a button to load the fruit list
+if st.button("Load Fruit List"):
+    load_fruit_list()
 
