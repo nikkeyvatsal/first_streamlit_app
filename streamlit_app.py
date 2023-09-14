@@ -4,7 +4,7 @@ import pandas
 import requests
 import snowflake.connector
 import urllib.request
-from urllib.error import URLerror
+
 
 
 streamlit.title('My new code page')
