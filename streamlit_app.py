@@ -31,18 +31,8 @@ if st.button("Get Information"):
 
 
 
-import tkinter as tk
 import snowflake.connector
 
-# Snowflake connection parameters
-snowflake_params = {
-    'account': 'your_account_url',
-    'user': 'your_username',
-    'password': 'your_password',
-    'warehouse': 'your_warehouse',
-    'database': 'your_database',
-    'schema': 'your_schema'
-}
 
 def load_fruits():
     try:
