@@ -62,15 +62,7 @@ def fruit_load_list():
         for row in fruit_list:
             st.write(row[0])
 
-    except snowflake.connector.errors.ProgrammingError as e:
-        st.error(f"Snowflake Error: {e}")
-    except Exception as e:
-        st.error(f"An unexpected error occurred: {e}")
-    finally:
-        # Close the cursor and connection
-        cursor.close()
-        conn.close()
-
+   
 # Create a Streamlit app
 st.title("Fruit List App")
 
