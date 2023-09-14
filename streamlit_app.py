@@ -32,3 +32,5 @@ if st.button("Get Information"):
         st.write(result)
     else:
         st.error("Please select a fruit to get information.")
+
+
